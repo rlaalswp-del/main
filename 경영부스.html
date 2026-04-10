@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새벽 기획집행부 - 부스 운영 대시보드</title>
+    <style>
+        :root {
+            --main-dark: #1a1a1a;
+            --point-gold: #c5a059;
+            --bg-light: #f4f4f4;
+            --price-red: #d32f2f;
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: var(--bg-light);
+            margin: 0; padding: 20px; color: var(--main-dark);
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; }
+
+        header {
+            background: var(--main-dark);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 5px solid var(--point-gold);
+        }
+
+        header h1 { margin: 0; letter-spacing: 2px; font-size: 1.8rem; }
+        header p { margin: 10px 0 0; opacity: 0.8; font-weight: 300; }
+
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .summary-card span { display: block; font-size: 0.85rem; color: #777; margin-bottom: 8px; }
+        .summary-card strong { font-size: 1.3rem; color: var(--main-dark); }
+
+        .item-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eee;
+        }
+
+        .card-header {
+            padding: 15px 20px;
+            background: #fafafa;
+            border-bottom: 1px solid #eee;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-body { padding: 20px; flex-grow: 1; }
+
+        .portion {
+            background: #f9f2e6;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #846529;
+            border-left: 3px solid var(--point-gold);
+        }
+
+        .price-tag {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--price-red);
+        }
+
+        .buy-link {
+            display: block;
+            background: var(--main-dark);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .buy-link:hover { background: var(--point-gold); }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: #eee;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>새벽 기획집행부 김치말이국수 부스 예산 편성</h1>
+
+        <p>축제 기간 3일간 150인분 유동적 운영 계획</p>
+    </header>
+
+    <div class="summary">
+        <div class="summary-card"><span>총 지출 예산</span><strong>199,420원</strong></div>
+        <div class="summary-card"><span>예상 판매 인원</span><strong>140 ~ 150명</strong></div>
+        <div class="summary-card"><span>1인분 원가</span><strong>약 1,330원</strong></div>
+    </div>
+
+    <div class="item-grid">
+        <!-- 1. 소면 -->
+        <div class="card">
+            <div class="card-header"><span>01</span> 소면 (총 12kg)</div>
+            <div class="card-body">
+                <div class="portion">🍴 1인당 80g 기준 (유동적 조절 가능)</div>
+                <div class="price-tag">36,720원</div>
+                <a href="https://www.11st.co.kr/products/7244488993?NaPm=ct%3Dmnsm99uw%7Cci%3D5aaeca88f3f4d78f77385b3e3e1861ad1b083514%7Ctr%3Dslsl%7Csn%3D17703%7Chk%3D55fc5391fadb208f4119fd30b07c919583ca6fe4&utm_term=&utm_campaign=%B3%D7%C0%CC%B9%F6pc_%B0%A1%B0%DD%BA%F1%B1%B3%B1%E2%BA%BB&utm_source=%B3%D7%C0%CC%B9%F6_PC_PCS&utm_medium=%B0%A1%B0%DD%BA%F1%B1%B3">구매 링크 바로가기</a>
+            </div>
+        </div>
+
+        <!-- 2. 육수 -->
+        <div class="card">
+            <div class="card-header"><span>02</span> 냉면 육수 (총 42kg)</div>
+            <div class="card-body">
+                <div class="portion">🍴 1인당 280~300ml (현장 상황 맞춰 배분)</div>
+                <div class="price-tag">59,400원</div>
+                <a href="https://brand.naver.com/pam/products/4986884757?nl-query=대용량+냉면+육수&nl-ts-pid=jOAzkwqVJ5RsskV1t0s-058665&NaPm=ct%3Dmnsn64q8%7Cci%3D8e287dc5fc74052a75381521389b7c1c0b76fd81%7Ctr%3Dsls%7Csn%3D589631%7Chk%3D9d3738ed8a57ed742dcf38a787dfc327e8fc0f32
+">구매 링크 바로가기</a>
+            </div>
+        </div>
+
+        <!-- 3. 다진김치 -->
+        <div class="card">
+            <div class="card-header"><span>03</span> 정다래 다진김치 (총 10kg)</div>
+            <div class="card-body">
+                <div class="portion">🍴 1인당 약 65g 내외 고명 사용</div>
+                <div class="price-tag">57,000원</div>
+                <a href="https://www.coupang.com/vp/products/8700966802?itemId=27249949858&vendorItemId=94216841563&q=정다래+다진김차&searchId=212a58891338386&sourceType=search&itemsCount=60&searchRank=3&rank=3&traceId=mnsn5n1y">구매 링크 바로가기</a>
+            </div>
+        </div>
+
+        <!-- 4. 오이 -->
+        <div class="card">
+            <div class="card-header"><span>04</span> 오이 (총 3kg)</div>
+            <div class="card-body">
+                <div class="portion">🍴 직접 채썰기 (1인당 약 20g 배분)</div>
+                <div class="price-tag">10,400원</div>
+                <a href="https://www.coupang.com/vp/products/9407956500?itemId=27951034275&vendorItemId=94907106107&pickType=COU_PICK&q=오이+3kg&searchId=169b71fc1396200&sourceType=search&itemsCount=60&searchRank=1&rank=1&traceId=mnsn3kmk">구매 링크 바로가기</a>
+            </div>
+        </div>
+
+        <!-- 5. 삶은 메추리알 -->
+        <div class="card">
+            <div class="card-header"><span>05</span> 삶은 메추리알 (총 3kg)</div>
+            <div class="card-body">
+                <div class="portion">🍴 1인당 2알씩 (약 150명분)</div>
+                <div class="price-tag">23,120원</div>
+                <a href="https://item.gmarket.co.kr/Item?goodscode=4668984503&lcd=100000020&NaPm=ct%3Dmnsnbj68%7Cci%3Daf0fce3efd7d2365cbdadbec9a6e57dce6c32e1a%7Ctr%3Dslsl%7Csn%3D24%7Chk%3Df682b6eef3f6d12e0e23fffd3e3abfa02e0d7900
+">구매 링크 바로가기</a>
+            </div>
+        </div>
+
+        <!-- 6. 김가루 -->
+        <div class="card">
+            <div class="card-header"><span>06</span> 김가루 (총 500g)</div>
+            <div class="card-body">
+                <div class="portion">🍴 볶은깨 포함 / 1인당 1~2꼬집</div>
+                <div class="price-tag">12,780원</div>
+                <a href="https://www.coupang.com/vp/products/8180232674?itemId=9826626638&vendorItemId=77110139272&pickType=COU_PICK&q=김가루+500g&searchId=9254a6d01556571&sourceType=search&itemsCount=60&searchRank=0&rank=0&traceId=mnsnjmr1">구매 링크 바로가기</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <strong>💡 참고 사항:</strong><br>
+        - 육수 배분량(280~300ml)에 따라 전체 판매 가능 인원이 결정되니 배분이 중요합니다.<br>
+        - 위 링크들은 요청하신 판매처 원본 주소로 연결되도록 설정하였습니다.
+    </footer>
+</div>
+
+</body>
+</html>
